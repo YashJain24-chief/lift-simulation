@@ -1,0 +1,98 @@
+body {
+	font-family: sans-serif;
+	background-color: #242b2e;
+	padding: 30px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.button-add-floor-lift-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.button-add-floor-lift-container > * {
+	width: 30%;
+	background-color: #5a20cb;
+	padding: 8px;
+	font-size: 20px;
+	border-radius: 10px;
+	color: white;
+}
+
+.floor-container {
+	margin-top: 40px;
+}
+
+.single-floor {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	height: 100px;
+	padding: 20px;
+	border-bottom: 1px solid white;
+}
+
+.lift {
+	background-color: grey;
+	width: 80px;
+	height: 80px;
+	border-radius: 2px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-width {
+	width: 40px;
+	height: 40px;
+	background-color: gray;
+	border-radius: 100%;
+	padding: 4px;
+}
+
+.up-listener {
+	transform: rotate(180deg);
+}
+
+.door-width {
+	background-color: #5a20cb;
+	width: 49%;
+	height: 100%;
+}
+
+.lift-door-left {
+	animation: left-animation 2.5s ease-in-out;
+}
+.lift-door-right {
+	animation: right-animation 2.5s ease-in-out;
+}
+
+@keyframes left-animation {
+	0% {
+		width: 49%;
+	}
+	50% {
+		width: 0%;
+	}
+	100% {
+		width: 49%;
+	}
+}
+@keyframes right-animation {
+	0% {
+		width: 49%;
+	}
+	50% {
+		width: 0%;
+	}
+	100% {
+		width: 49%;
+	}
+}
