@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Lift Simulation</title>
-		<meta charset="UTF-8" />
-		<link rel="stylesheet" href="./src/styles.css" />
-	</head>
+  <head>
+    <title>Lift Simulation</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
 
-	<body>
-		<div id="app">
-			<div class="button-add-floor-lift-container">
-				<button id="add-floor-button">+ Floor</button>
-				<button id="add-lift-button">+ Lift</button>
-			</div>
+  <body>
+    <div id="app">
+      <div class="button-add-floor-lift-container">
+        <button id="add-floor-button">+ Floor</button>
+        <button id="add-lift-button">+ Lift</button>
+      </div>
 
-			<div class="floor-container">
-				<div class="single-floor" id="0-floor">
-					<img
-						src="./src/arrow.svg"
-						alt=""
-						class="button-width up-listener 0-up"
-						id="0"
-					/>
-					<img
-						src="./src/arrow.svg"
-						alt=""
-						class="button-width down-listener 0-down"
-						id="0"
-					/>
-					<div class="lift">
-						<div class="door-width"></div>
-						<div class="door-width"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script src="./src/index.js"></script>
-	</body>
+      <div class="floor-container">
+        <div class="single-floor" id="0-floor">
+          <img
+            src="./src/arrow.svg"
+            alt=""
+            class="button-width up-listener 0-up"
+            id="0"
+          />
+          <img
+            src="./src/arrow.svg"
+            alt=""
+            class="button-width down-listener 0-down"
+            id="0"
+          />
+          <div class="lift">
+            <div class="door-width"></div>
+            <div class="door-width"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./src/index.js"></script>
+  </body>
 </html>
