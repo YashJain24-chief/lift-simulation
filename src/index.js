@@ -8,23 +8,41 @@ const upButtons = document.getElementsByClassName("up-listener");
 const downButtons = document.getElementsByClassName("down-listener");
 const liftButton = document.getElementById("add-lift-button");
 
+// connecting to socket
+const socket = io.connect("https://lift-simulation-backend.onrender.com");
+socket.on("addNewFloor", () => addNewFloor());
+socket.on("addNewLift", () => addLift());
+socket.on("moveLiftUp", (args) => moveLift(args.id, args.up));
+socket.on("moveLiftDown", (args) => moveLift(args.id, args.down));
+
 let liftCount = 0;
 const queue = [];
 const liftDetails = [{ liftId: 0, busyStatus: false, floorNo: 0 }];
 
-liftButton.addEventListener("click", addLift);
+liftButton.addEventListener("click", () => socket.emit("addNewLift"));
 
 addFloor.addEventListener("click", () => {
-  addNewFloor();
+  socket.emit("addNewFloor");
 });
 
-initialUpButton[0].addEventListener("click", () => moveLift(0, "up"));
-initialDownButton[0].addEventListener("click", () => moveLift(0, "down"));
+initialUpButton[0].addEventListener("click", () =>
+  socket.emit("moveLiftUp", { id: 0, up: "up" })
+);
+
+initialDownButton[0].addEventListener("click", () =>
+  socket.emit("moveLiftDown", { id: 0, down: "down" })
+);
 
 function addListener(element) {
   const id = parseInt(element.id);
-  upButtons[0].addEventListener("click", () => moveLift(id, "up"));
-  downButtons[0].addEventListener("click", () => moveLift(id, "down"));
+
+  upButtons[0].addEventListener("click", () =>
+    socket.emit("moveLiftUp", { id: id, up: "up" })
+  );
+
+  downButtons[0].addEventListener("click", () =>
+    socket.emit("moveLiftDown", { id: id, down: "down" })
+  );
 }
 
 function addNewFloor() {
