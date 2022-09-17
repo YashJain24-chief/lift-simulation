@@ -99,11 +99,12 @@ function moveLift(id, buttonClicked) {
     }
   }
   if (flag) {
-		if (!queue.includes(id)) {
-			queue.push(id);
-			handleQueueRequests(id);
-		}
-	}
+    if (!queue.includes(id)) {
+      queue.push(id);
+      changeActiveButtonColor(buttonClicked, id);
+      handleQueueRequests(id);
+    }
+  }
 }
 
 function handleQueueRequests(id) {
